@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bakari Safari — Bespoke Tanzania Safari Experiences</title>
+<meta name="description" content="Bakari Safari is a Canadian-incorporated tour operator specializing in bespoke private safaris in Tanzania, serving discerning travelers from Canada, the United States, and Mainland China.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bakarisafari.com/">
+<meta property="og:title" content="Bakari Safari — Bespoke Tanzania Safari Experiences">
+<meta property="og:description" content="A Canadian tour operator specializing in bespoke private safaris in Tanzania.">
+<meta property="og:image" content="images/hero.jpg">
+<meta property="og:site_name" content="Bakari Safari">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bakari Safari — Bespoke Tanzania Safari Experiences">
+<meta name="twitter:description" content="A Canadian tour operator specializing in bespoke private safaris in Tanzania.">
+<meta name="twitter:image" content="images/hero.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' font-family='serif' fill='%232C4A3E'>B</text></svg>">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-main: #FAF9F5;
+    --primary: #2C4A3E;
+    --accent: #8B5E3C;
+    --text: #1A1915;
+    --muted: #6B6A62;
+    --divider: #E6E3D7;
+    --warm-tint: #F2EFE3;
+  }
+
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text);
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  .font-serif-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+
+  .label-uc {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  .divider-line { height: 1px; background-color: var(--divider); width: 100%; }
+  .thin-divider { width: 60px; height: 1px; background-color: var(--accent); display: inline-block; }
+
+  /* Nav */
+  #mainNav { transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease; }
+  #mainNav.scrolled {
+    background-color: rgba(250, 249, 245, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(26, 25, 21, 0.06);
+  }
+  #mainNav.scrolled .nav-link, #mainNav.scrolled .nav-logo, #mainNav.scrolled .nav-inquire {
+    color: var(--text); border-color: var(--text);
+  }
+  #mainNav.scrolled .nav-inquire { color: var(--primary); border-color: var(--primary); }
+  #mainNav.scrolled .nav-inquire:hover { background-color: var(--primary); color: var(--bg-main); }
+
+  .nav-link {
+    color: rgba(255,255,255,0.92);
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  .nav-link:hover { opacity: 0.7; }
+  .nav-logo {
+    color: rgba(255,255,255,0.95);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    font-size: 1.05rem;
+  }
+  .nav-inquire { color: rgba(255,255,255,0.92); border-color: rgba(255,255,255,0.7); }
+  .nav-inquire:hover { background-color: rgba(255,255,255,0.95); color: var(--primary); }
+
+  /* Hero - layered with always-visible CSS gradient as base */
+  .hero-bg {
+    position: relative;
+    background:
+      radial-gradient(ellipse at 30% 70%, rgba(139, 94, 60, 0.6) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 30%, rgba(212, 153, 80, 0.5) 0%, transparent 60%),
+      linear-gradient(135deg, #1a2920 0%, #2C4A3E 30%, #5C4A2E 65%, #8B5E3C 100%);
+    overflow: hidden;
+  }
+  .hero-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.65) 100%),
+      url('images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-content { position: relative; z-index: 2; }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .btn-primary {
+    background-color: var(--bg-main);
+    color: var(--primary);
+    padding: 1rem 2.2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid var(--bg-main);
+    display: inline-block;
+  }
+  .btn-primary:hover { background-color: var(--accent); color: var(--bg-main); border-color: var(--accent); }
+
+  .btn-outline {
+    background-color: transparent;
+    color: var(--bg-main);
+    padding: 1rem 2.2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.85);
+    display: inline-block;
+  }
+  .btn-outline:hover { background-color: rgba(255,255,255,0.95); color: var(--primary); }
+
+  .btn-dark {
+    background-color: var(--primary);
+    color: var(--bg-main);
+    padding: 1rem 2.2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid var(--primary);
+    display: inline-block;
+  }
+  .btn-dark:hover { background-color: var(--accent); border-color: var(--accent); }
+
+  .btn-dark-outline {
+    background-color: transparent;
+    color: var(--primary);
+    padding: 1rem 2.2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid var(--primary);
+    display: inline-block;
+  }
+  .btn-dark-outline:hover { background-color: var(--primary); color: var(--bg-main); }
+
+  .scroll-indicator {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    animation: scrollPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { transform: translateY(0); opacity: 0.7; }
+    50% { transform: translateY(8px); opacity: 1; }
+  }
+
+  .section-pad { padding-top: 100px; padding-bottom: 100px; }
+  @media (min-width: 1024px) { .section-pad { padding-top: 120px; padding-bottom: 120px; } }
+
+  .max-content { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+  .max-content-narrow { max-width: 760px; margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+    color: var(--text);
+  }
+
+  .section-subtitle { color: var(--muted); font-size: 1.05rem; line-height: 1.75; max-width: 640px; }
+  .body-text { color: var(--text); font-size: 1rem; line-height: 1.85; }
+  .body-text-muted { color: var(--muted); font-size: 1rem; line-height: 1.85; }
+
+  .tier-header { border-top: 1px solid var(--divider); padding-top: 60px; margin-top: 60px; }
+  .tier-eyebrow {
+    color: var(--accent);
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .journey-card {
+    background-color: var(--bg-main);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .journey-card:hover { transform: translateY(-4px); }
+
+  .journey-card-img-wrap {
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    margin-bottom: 1.5rem;
+    background:
+      radial-gradient(ellipse at 30% 70%, rgba(139, 94, 60, 0.5) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 30%, rgba(212, 153, 80, 0.4) 0%, transparent 60%),
+      linear-gradient(135deg, #2C4A3E 0%, #5C4A2E 60%, #8B5E3C 100%);
+    position: relative;
+  }
+  .journey-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    position: relative;
+    z-index: 1;
+  }
+  .journey-card:hover .journey-card-img { transform: scale(1.05); }
+
+  .img-fallback-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.9);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    text-align: center;
+    padding: 1.5rem;
+    pointer-events: none;
+    z-index: 0;
+    line-height: 1.5;
+  }
+
+  .journey-card-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .journey-card-meta {
+    color: var(--accent);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.9rem;
+    font-weight: 500;
+  }
+  .journey-card-pitch {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+  .journey-card-link {
+    color: var(--primary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    border-bottom: 1px solid var(--primary);
+    padding-bottom: 4px;
+    align-self: flex-start;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .journey-card:hover .journey-card-link { color: var(--accent); border-color: var(--accent); }
+
+  .network-img-wrap {
+    background:
+      radial-gradient(ellipse at 30% 70%, rgba(139, 94, 60, 0.5) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 30%, rgba(212, 153, 80, 0.4) 0%, transparent 60%),
+      linear-gradient(135deg, #2C4A3E 0%, #5C4A2E 60%, #8B5E3C 100%);
+    aspect-ratio: 4/5;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .conservation-bg {
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(139, 94, 60, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(44, 74, 62, 0.12) 0%, transparent 50%),
+      var(--warm-tint);
+    background-image:
+      linear-gradient(rgba(242, 239, 227, 0.9), rgba(242, 239, 227, 0.95)),
+      url('images/conservation.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  @media (max-width: 768px) { .conservation-bg { background-attachment: scroll; } }
+
+  .commitment-list li {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(139, 94, 60, 0.18);
+    color: var(--text);
+    line-height: 1.85;
+    font-size: 1rem;
+    display: flex;
+    gap: 1.2rem;
+  }
+  .commitment-list li:last-child { border-bottom: none; }
+  .commitment-list li::before { content: "—"; color: var(--accent); font-weight: 500; flex-shrink: 0; }
+
+  .standards-list li {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--divider);
+    color: var(--text);
+    line-height: 1.85;
+    font-size: 1rem;
+    display: flex;
+    gap: 1.2rem;
+  }
+  .standards-list li:last-child { border-bottom: none; }
+  .standards-list li::before {
+    content: counter(stditem, decimal-leading-zero);
+    counter-increment: stditem;
+    color: var(--accent);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+    min-width: 28px;
+    font-weight: 500;
+  }
+  .standards-list { counter-reset: stditem; }
+
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(26, 25, 21, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 200;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 2rem 1rem;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-content {
+    background-color: var(--bg-main);
+    max-width: 880px;
+    width: 100%;
+    margin: 2rem auto;
+    position: relative;
+    animation: modalIn 0.4s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(250, 249, 245, 0.9);
+    color: var(--text);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: background-color 0.2s;
+  }
+  .modal-close:hover { background-color: var(--bg-main); }
+
+  .modal-hero-wrap {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background:
+      radial-gradient(ellipse at 30% 70%, rgba(139, 94, 60, 0.5) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 30%, rgba(212, 153, 80, 0.4) 0%, transparent 60%),
+      linear-gradient(135deg, #2C4A3E 0%, #5C4A2E 60%, #8B5E3C 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .modal-hero {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+  }
+
+  .modal-body { padding: 2.5rem 2rem; }
+  @media (min-width: 768px) { .modal-body { padding: 3.5rem 3.5rem; } }
+
+  .modal-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+  .modal-meta {
+    color: var(--accent);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  .modal-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    margin-top: 2.2rem;
+  }
+
+  .day-item {
+    border-left: 1px solid var(--divider);
+    padding: 0.5rem 0 1.2rem 1.5rem;
+    margin-left: 0.5rem;
+    position: relative;
+  }
+  .day-item::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: 0.9rem;
+    width: 7px;
+    height: 7px;
+    background-color: var(--accent);
+    border-radius: 50%;
+  }
+  .day-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: var(--accent);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.3rem;
+  }
+  .day-text { color: var(--text); line-height: 1.75; font-size: 0.95rem; }
+
+  footer { background-color: #1F352B; color: #C8C5B8; }
+  footer a { color: #C8C5B8; transition: color 0.2s; }
+  footer a:hover { color: var(--bg-main); }
+
+  @media (max-width: 768px) { .nav-center-menu { display: none; } }
+</style>
+</head>
+<body>
+
+<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 py-5 md:py-6">
+  <div class="max-content flex items-center justify-between">
+    <a href="#top" class="nav-logo">BAKARI SAFARI</a>
+    <div class="nav-center-menu hidden md:flex items-center gap-9">
+      <a href="#journeys" class="nav-link">Journeys</a>
+      <a href="#network" class="nav-link">Network</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <a href="#contact" class="nav-inquire border px-4 py-1.5 text-xs tracking-widest font-medium uppercase">Inquire</a>
+  </div>
+</nav>
+
+<section id="top" class="hero-bg" style="height: 100vh; min-height: 640px;">
+  <div class="hero-content absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+    <p class="eyebrow text-white/90 mb-7">PREMIUM TANZANIA SAFARI</p>
+    <h1 class="hero-title text-white mb-7 max-w-5xl">Where Wild Hearts Roam</h1>
+    <p class="text-white/85 max-w-2xl mb-10 leading-relaxed text-base md:text-lg">
+      Bespoke private safaris crafted for travelers who value authenticity, intimacy, and a deeper connection to the wild.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 items-center">
+      <a href="#contact" class="btn-primary">Begin Your Journey</a>
+      <a href="#contact" class="btn-outline">For Trade Partners</a>
+    </div>
+  </div>
+  <div class="hero-content absolute bottom-8 left-1/2 -translate-x-1/2">
+    <span class="scroll-indicator">SCROLL</span>
+  </div>
+</section>
+
+<section id="about" class="section-pad">
+  <div class="max-content-narrow text-center">
+    <p class="eyebrow mb-6" style="color: var(--accent);">ABOUT BAKARI SAFARI</p>
+    <h2 class="section-title mb-10">A new standard for Tanzania safari</h2>
+    <span class="thin-divider mb-10"></span>
+    <div class="body-text text-left md:text-center space-y-5">
+      <p>Bakari Safari was founded on a simple belief: Tanzania's most extraordinary safari experiences deserve a thoughtful bridge to travelers who will cherish them.</p>
+      <p>We are a Canadian-incorporated tour operator specializing in bespoke private safaris in Tanzania, designed across a full spectrum of comfort and luxury, for discerning travelers from Canada, the United States, and Mainland China.</p>
+      <p>Our bilingual English/Mandarin team brings genuine cultural fluency across our three source markets.</p>
+      <p>We work directly with Tanzania's established lodge collections to deliver our journeys, with on-the-ground operations conducted through our TALA-licensed operating partner in Arusha. Every Bakari journey is designed bespoke, paced for intimacy, and supported by a team that knows Tanzania as both a place and a privilege.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider-line max-w-6xl mx-auto"></div>
+
+<section id="journeys" class="section-pad">
+  <div class="max-content">
+    <div class="text-center mb-16 md:mb-20">
+      <p class="eyebrow mb-6" style="color: var(--accent);">OUR PORTFOLIO</p>
+      <h2 class="section-title mb-7">A Spectrum of Journeys</h2>
+      <p class="section-subtitle mx-auto">From accessible introductions to bespoke ultra-luxury expeditions, our portfolio spans every level of safari experience.</p>
+    </div>
+
+    <div class="tier-header">
+      <div class="grid md:grid-cols-12 gap-8 mb-14">
+        <div class="md:col-span-4">
+          <p class="tier-eyebrow mb-3">Tier 01</p>
+          <h3 class="font-serif-display" style="font-size: 2.1rem; line-height: 1.15;">Budget</h3>
+        </div>
+        <div class="md:col-span-8">
+          <p class="body-text-muted">Authentic Tanzania, accessibly priced. Comfortable mid-range lodges and tented camps near park gates, with reliable service and our signature guiding standards.</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10" id="tier-budget-grid"></div>
+    </div>
+
+    <div class="tier-header">
+      <div class="grid md:grid-cols-12 gap-8 mb-14">
+        <div class="md:col-span-4">
+          <p class="tier-eyebrow mb-3">Tier 02</p>
+          <h3 class="font-serif-display" style="font-size: 2.1rem; line-height: 1.15;">Comfort</h3>
+        </div>
+        <div class="md:col-span-8">
+          <p class="body-text-muted">Refined comfort meets wild Tanzania. Elevated tented camps and country lodges with intimate atmospheres, unhurried pacing, and prime locations.</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10" id="tier-comfort-grid"></div>
+    </div>
+
+    <div class="tier-header">
+      <div class="grid md:grid-cols-12 gap-8 mb-14">
+        <div class="md:col-span-4">
+          <p class="tier-eyebrow mb-3">Tier 03</p>
+          <h3 class="font-serif-display" style="font-size: 2.1rem; line-height: 1.15;">Premium</h3>
+        </div>
+        <div class="md:col-span-8">
+          <p class="body-text-muted">The signature Bakari Safari experience. Premium tented camps in prime in-park locations, private vehicles throughout, and the curated detail that distinguishes a truly memorable safari.</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10" id="tier-premium-grid"></div>
+    </div>
+
+    <div class="tier-header">
+      <div class="grid md:grid-cols-12 gap-8 mb-14">
+        <div class="md:col-span-4">
+          <p class="tier-eyebrow mb-3">Tier 04</p>
+          <h3 class="font-serif-display" style="font-size: 2.1rem; line-height: 1.15;">Ultra-Luxury</h3>
+        </div>
+        <div class="md:col-span-8">
+          <p class="body-text-muted">Bespoke expeditions for the most discerning. Ultra-premium tented camps and exclusive-use properties, dedicated guides, charter flights, and the unhurried pace that allows Tanzania to fully reveal itself.</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10" id="tier-ultra-grid"></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-line max-w-6xl mx-auto"></div>
+
+<section id="network" class="section-pad">
+  <div class="max-content-narrow text-center">
+    <p class="eyebrow mb-6" style="color: var(--accent);">PARTNERSHIPS</p>
+    <h2 class="section-title mb-10">Our Lodge Network</h2>
+    <span class="thin-divider mb-10"></span>
+    <p class="body-text mb-8" style="font-size: 1.18rem; line-height: 1.75;">
+      We work with established lodge collections across Tanzania's Northern Circuit, Zanzibar, and emerging conservancies — selected for location, service standards, and conservation commitment.
+    </p>
+    <p class="body-text-muted mb-12 text-left md:text-center">
+      Our partner lodges range from comfortable mid-range camps near park gates to ultra-luxury tented camps in remote conservancies. Final property selection for each journey is based on guest preferences, travel dates, and seasonal positioning of the herds. Specific partner recommendations shared with confirmed clients during itinerary design.
+    </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 my-14 max-w-3xl mx-auto">
+      <div>
+        <p class="font-serif-display" style="font-size: 2.4rem; color: var(--accent); line-height: 1;">04</p>
+        <p class="label-uc mt-3" style="color: var(--muted);">Tiers of<br>Experience</p>
+      </div>
+      <div>
+        <p class="font-serif-display" style="font-size: 2.4rem; color: var(--accent); line-height: 1;">13</p>
+        <p class="label-uc mt-3" style="color: var(--muted);">Curated<br>Itineraries</p>
+      </div>
+      <div>
+        <p class="font-serif-display" style="font-size: 2.4rem; color: var(--accent); line-height: 1;">2</p>
+        <p class="label-uc mt-3" style="color: var(--muted);">Source Markets<br>EN · 中</p>
+      </div>
+      <div>
+        <p class="font-serif-display" style="font-size: 2.4rem; color: var(--accent); line-height: 1;">∞</p>
+        <p class="label-uc mt-3" style="color: var(--muted);">Bespoke<br>Combinations</p>
+      </div>
+    </div>
+
+    <div class="divider-line mb-8 max-w-md mx-auto"></div>
+    <p class="italic text-sm" style="color: var(--muted);">
+      Tanzania ground operations conducted in partnership with a TALA-licensed operating partner, in full compliance with Tanzania tourism regulations.
+    </p>
+  </div>
+</section>
+
+<section class="section-pad conservation-bg">
+  <div class="max-content-narrow">
+    <div class="text-center mb-14">
+      <p class="eyebrow mb-6" style="color: var(--accent);">CONSERVATION & COMMUNITY</p>
+      <h2 class="section-title mb-8">Travel That Protects What It Celebrates</h2>
+      <p class="section-subtitle mx-auto mb-10">
+        Tanzania's wilderness is not infinite. Every Bakari Safari journey is built around this understanding.
+      </p>
+      <span class="thin-divider"></span>
+    </div>
+
+    <p class="body-text mb-14 text-center" style="font-size: 1.08rem;">
+      The lodges, communities, and wild places that make our journeys possible exist because of sustained, deliberate stewardship. We believe travel that takes from these places must also give back to them — not as marketing, but as operational reality. Every Bakari Safari journey contributes directly to conservation efforts and community initiatives in Tanzania.
+    </p>
+
+    <h3 class="font-serif-display text-2xl md:text-3xl mb-8 text-center" style="color: var(--primary);">Our Commitment</h3>
+
+    <ul class="commitment-list">
+      <li><span>Direct support for Tanzania-based conservation efforts and community initiatives — taking forms appropriate to each partner, whether that is funding, infrastructure, capacity building, or long-term collaboration.</span></li>
+      <li><span>Active partnership with lodge operators and ground partners chosen for their genuine commitment to conservation and community impact.</span></li>
+      <li><span>Transparency in our impact — partner organizations, project focus, and meaningful outcomes published in our annual report once our commercial operations are established.</span></li>
+      <li><span>Long-term vision: the establishment of a dedicated Bakari Safari community and conservation program, with structure and partnerships to be formalized through our first year of operations.</span></li>
+    </ul>
+
+    <p class="italic text-sm mt-12 text-center" style="color: var(--muted);">
+      Our partnerships are being thoughtfully developed in alignment with our journey portfolio. We believe meaningful impact is built deliberately, through sustained relationships, not announced prematurely.
+    </p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="max-content">
+    <div class="grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-5">
+        <p class="eyebrow mb-6" style="color: var(--accent);">STANDARDS</p>
+        <h2 class="section-title mb-6">Our Operating Standards</h2>
+        <p class="section-subtitle">How we work, on the ground.</p>
+      </div>
+      <div class="md:col-span-7">
+        <ul class="standards-list">
+          <li><span>Small group sizes — we cap private safaris well below industry norms for genuine intimacy.</span></li>
+          <li><span>Certified, experienced guides selected for both wildlife knowledge and cultural fluency.</span></li>
+          <li><span>Adherence to Tanzania National Parks regulations, community protocols, and lodge partner standards.</span></li>
+          <li><span>Conservation-conscious operations — we minimize single-use plastics, respect off-road and wildlife distance protocols, and continuously evaluate ways to reduce our environmental footprint.</span></li>
+          <li><span>Continuous review — operational standards revisited annually with our ground partners to incorporate evolving best practices.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-line max-w-6xl mx-auto"></div>
+
+<section id="contact" class="section-pad">
+  <div class="max-content">
+    <div class="text-center mb-14">
+      <p class="eyebrow mb-6" style="color: var(--accent);">GET IN TOUCH</p>
+      <h2 class="section-title mb-7">Begin Your Journey</h2>
+      <p class="section-subtitle mx-auto">
+        Every Bakari Safari journey begins with a conversation. Whether you are a traveler dreaming of Tanzania, or a lodge or trade partner exploring collaboration, we welcome your inquiry.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+      <div class="border-t pt-10" style="border-color: var(--divider);">
+        <p class="label-uc mb-4" style="color: var(--accent);">For Travelers</p>
+        <p class="font-serif-display text-2xl md:text-3xl mb-6" style="color: var(--text);">Plan a private safari</p>
+        <div class="space-y-2 mb-8">
+          <p class="body-text">
+            <span class="label-uc" style="color: var(--muted);">Inquiries</span><br>
+            <a href="mailto:reservations@bakarisafari.com" class="hover:underline">reservations@bakarisafari.com</a>
+          </p>
+          <p class="body-text">
+            <span class="label-uc" style="color: var(--muted);">WhatsApp</span><br>
+            +1 (XXX) XXX-XXXX
+          </p>
+        </div>
+        <a href="mailto:reservations@bakarisafari.com" class="btn-dark">Begin Your Journey</a>
+      </div>
+
+      <div class="border-t pt-10" style="border-color: var(--divider);">
+        <p class="label-uc mb-4" style="color: var(--accent);">For Trade & Lodge Partners</p>
+        <p class="font-serif-display text-2xl md:text-3xl mb-6" style="color: var(--text);">Explore collaboration</p>
+        <div class="space-y-2 mb-8">
+          <p class="body-text">
+            <span class="label-uc" style="color: var(--muted);">Trade Inquiries</span><br>
+            <a href="mailto:trade@bakarisafari.com" class="hover:underline">trade@bakarisafari.com</a>
+          </p>
+          <p class="body-text">
+            <span class="label-uc" style="color: var(--muted);">Founder Direct</span><br>
+            <a href="mailto:eli@bakarisafari.com" class="hover:underline">eli@bakarisafari.com</a>
+          </p>
+        </div>
+        <a href="mailto:trade@bakarisafari.com" class="btn-dark-outline">Trade Partner Inquiry</a>
+      </div>
+    </div>
+
+    <p class="text-center text-sm italic mt-16" style="color: var(--muted);">
+      We aim to respond to all inquiries within 1–2 business days.
+    </p>
+  </div>
+</section>
+
+<footer class="pt-20 pb-10">
+  <div class="max-content">
+    <div class="grid md:grid-cols-3 gap-12 mb-16">
+      <div>
+        <p class="font-serif-display text-2xl mb-3" style="color: var(--bg-main); letter-spacing: 0.18em;">BAKARI SAFARI</p>
+        <p class="text-sm opacity-80">Based in Canada</p>
+      </div>
+      <div>
+        <p class="label-uc mb-4 opacity-90" style="color: var(--bg-main);">Quick Links</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#journeys">Journeys</a></li>
+          <li><a href="#network">Network</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="label-uc mb-4 opacity-90" style="color: var(--bg-main);">Compliance</p>
+        <ul class="space-y-3 text-sm opacity-80 leading-relaxed">
+          <li>Bakari Safari Inc. — Ontario incorporated</li>
+          <li>TICO registration in progress</li>
+          <li>Tanzania ground operations conducted via TALA-licensed operating partner</li>
+          <li>Bakari Safari Conservation & Community Program in formation</li>
+        </ul>
+      </div>
+    </div>
+    <div class="divider-line mb-8" style="background-color: rgba(200,197,184,0.25);"></div>
+    <div class="text-center text-xs opacity-70">
+      <p class="mb-3">© 2026 Bakari Safari Inc. All rights reserved.</p>
+      <p class="max-w-3xl mx-auto leading-relaxed opacity-90">
+        By contacting us, you consent to Bakari Safari Inc. processing your inquiry information solely for the purpose of responding to your request. Privacy Policy and Terms of Service in development.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="journeyModal" role="dialog" aria-modal="true">
+  <div class="modal-content" id="modalContent">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <div class="modal-hero-wrap">
+      <div id="modalImageFallback" class="img-fallback-text"></div>
+      <img id="modalImage" class="modal-hero" src="" alt="" onerror="this.style.display='none';">
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const journeys = [
+  { tier: "budget", image: "images/journey-01-essentials.jpg", alt: "Acacia tree on Serengeti plains at sunset", title: "Tanzania Essentials", meta: "6 Days \u00b7 Northern Circuit \u00b7 Budget", pitch: "An accessible introduction to Tanzania's iconic Northern Circuit for first-time safari travelers.", description: "Designed for first-time safari travelers who want authentic wildlife encounters and Tanzania's signature landscapes without compromise on quality of guiding or wildlife access.", days: [{ d: "Day 1", t: "Arrival in Arusha \u2014 Met at Kilimanjaro International Airport (JRO). Transfer to comfortable lodge in Arusha. Pre-safari briefing." },{ d: "Day 2", t: "Tarangire National Park \u2014 Drive to Tarangire (~3 hours). Famous for baobab trees and elephant herds. Afternoon game drive. Overnight near park gate." },{ d: "Day 3", t: "Karatu / Lake Manyara \u2014 Travel via Lake Manyara with optional flamingo viewing. Continue to Karatu. Overnight at country lodge." },{ d: "Day 4", t: "Ngorongoro Crater \u2014 Full-day descent into the crater for one of Africa's most concentrated wildlife encounters. Picnic lunch on crater floor." },{ d: "Day 5", t: "Central Serengeti \u2014 Scenic transfer through central plains. Afternoon game drive in Seronera Valley. Overnight tented camp." },{ d: "Day 6", t: "Departure \u2014 Morning game drive en route to airstrip. Bush flight to Arusha. International departure." }], accommodation: "Comfortable mid-range lodges and tented camps with reliable service standards, located near park gates for convenient access." },
+  { tier: "budget", image: "images/journey-02-glimpse.jpg", alt: "Wildebeest herds on Serengeti plains", title: "The Migration Glimpse", meta: "7 Days \u00b7 Northern Circuit \u00b7 Migration Season", pitch: "A focused, accessible journey toward witnessing the Great Migration without bespoke pricing.", description: "Designed for travelers prioritizing the migration experience without the bespoke pricing of mobile camps. Timing aligned to either the Mara River crossings or the southern calving plains.", days: [{ d: "Day 1", t: "Arrival in Arusha \u2014 Welcome at JRO. Overnight in Arusha." },{ d: "Day 2", t: "Tarangire \u2014 Half-day game drive. Continue to Karatu in afternoon." },{ d: "Day 3", t: "Ngorongoro Crater \u2014 Full-day crater game drive. Overnight on crater rim or in Karatu." },{ d: "Day 4", t: "Travel to Migration Region \u2014 Long drive (~6 hours) to migration epicenter \u2014 central or northern Serengeti depending on season. Afternoon game drive." },{ d: "Day 5", t: "Migration Tracking \u2014 Full day tracking the migration herds. River crossings (Jul\u2013Oct) or calving plains (Dec\u2013Mar) depending on travel dates." },{ d: "Day 6", t: "Migration Tracking \u2014 Second full day in the migration zone for additional sightings." },{ d: "Day 7", t: "Departure \u2014 Morning game drive en route to airstrip. Bush flight to Arusha. International departure." }], accommodation: "Comfortable tented camps positioned in or near the migration zones, with simple but reliable safari standards." },
+  { tier: "comfort", image: "images/journey-03-discovery.jpg", alt: "Elephant herd in Tarangire National Park", title: "Tanzania Discovery", meta: "7 Days \u00b7 Northern Circuit \u00b7 Comfort", pitch: "Tanzania's classic Northern Circuit, refined \u2014 the trip most first-time safari guests imagine when they dream of Tanzania.", description: "Designed for travelers seeking elevated comfort, intimate camps, and unhurried game viewing.", days: [{ d: "Day 1", t: "Arusha arrival \u2014 Boutique lodge on Arusha's coffee plantations. Welcome dinner." },{ d: "Day 2", t: "Tarangire \u2014 Morning departure. Afternoon game drive amongst baobabs and elephant herds. Tented camp overlooking Tarangire River." },{ d: "Day 3", t: "Karatu \u2014 Lake Manyara optional. Coffee farm visit or spa. Comfort country lodge." },{ d: "Day 4", t: "Ngorongoro Crater \u2014 Full-day descent. Picnic with hippos in view. Crater rim overnight." },{ d: "Day 5", t: "Central Serengeti \u2014 Scenic transfer. Afternoon Seronera Valley game drive." },{ d: "Day 6", t: "Central Serengeti \u2014 Full day game drives. Optional sunrise hot air balloon safari (subject to availability and weather) with bush champagne breakfast." },{ d: "Day 7", t: "Departure \u2014 Morning game drive. Bush flight to Arusha." }], accommodation: "Comfort-tier tented camps and country lodges with elevated service, intimate atmospheres, and prime locations." },
+  { tier: "comfort", image: "images/journey-04-tracker.jpg", alt: "Wildebeest river crossing in Serengeti", title: "Migration Tracker", meta: "8 Days \u00b7 Northern Circuit \u00b7 Migration Season", pitch: "Substantial migration time without the bespoke pricing of mobile camps. Strategic camp placement minimizes transit and maximizes time with the herds.", description: "A purpose-built journey for travelers who want substantial migration exposure.", days: [{ d: "Day 1", t: "Arusha arrival." },{ d: "Day 2", t: "Tarangire \u2014 Game drive and overnight." },{ d: "Day 3", t: "Ngorongoro Crater \u2014 Full-day crater drive. Rim overnight." },{ d: "Day 4", t: "Bush flight to Migration Zone \u2014 Morning crater visit. Afternoon flight to migration zone (central, northern, or southern depending on season)." },{ d: "Day 5\u20137", t: "Migration Tracking \u2014 Three full days tracking herds. River crossings (Jul\u2013Oct in north) or calving (Dec\u2013Mar in Ndutu)." },{ d: "Day 8", t: "Departure \u2014 Final morning game drive. Bush flight to Arusha." }], accommodation: "Comfort-tier tented camps in the migration zones, including seasonal mobile camps." },
+  { tier: "comfort", image: "images/journey-05-family-wild.jpg", alt: "Family-friendly safari elephant family", title: "The Family Wild", meta: "8 Days \u00b7 Northern Circuit \u00b7 Family (6+)", pitch: "Tanzania reimagined for families. Family-welcoming lodges, guides specially briefed for younger travelers, and a daily rhythm that respects family pace.", description: "Family-welcoming lodges with pool facilities, age-appropriate cultural experiences, junior tracker activities, and pacing that respects both adult curiosity and family rhythm.", days: [{ d: "Day 1", t: "Arusha \u2014 Family welcome with junior tracker pack. Family-friendly lodge with pool." },{ d: "Day 2", t: "Tarangire \u2014 Half-day paced game drive. Pool afternoon. Junior tracker activities." },{ d: "Day 3", t: "Karatu \u2014 Coffee farm visit (hands-on coffee farm activities for children, season-permitting). Family suite overnight." },{ d: "Day 4", t: "Ngorongoro Crater \u2014 Full-day crater drive with frequent breaks. Rim overnight." },{ d: "Day 5\u20137", t: "Central Serengeti \u2014 Game drives, age-appropriate Maasai cultural visit, optional balloon safari (height-permitting; subject to availability and weather), bush picnics, junior tracker experiences." },{ d: "Day 8", t: "Departure \u2014 Bush flight to Arusha." }], accommodation: "Family-friendly comfort lodges with interconnecting rooms or family suites. Properties chosen for pool facilities, family dining options, and child-welcoming policies." },
+  { tier: "premium", image: "images/journey-06-northern-premium.jpg", alt: "Luxury tented camp at golden hour", title: "Northern Premium", meta: "8 Days \u00b7 Northern Circuit \u00b7 Premium", pitch: "The signature Bakari Safari Northern Circuit experience \u2014 premium tented camps in prime locations with private vehicles throughout.", description: "Premium tented camps in prime in-park locations, private vehicles throughout, unhurried game viewing, and curated detail.", days: [{ d: "Day 1", t: "Arusha \u2014 Boutique lodge on coffee plantations. Welcome dinner with safari briefing." },{ d: "Day 2", t: "Tarangire (private vehicle from this point) \u2014 Drive to Tarangire. Afternoon game drive. Sundowner. Premium tented camp." },{ d: "Day 3", t: "Karatu \u2014 Travel via Lake Manyara. Coffee farm and lunch. Premium country lodge." },{ d: "Day 4", t: "Ngorongoro Crater \u2014 Full-day drive with picnic lunch. Crater rim overnight." },{ d: "Day 5", t: "Bush flight to Central Serengeti \u2014 Morning leisure on rim. Bush flight. Afternoon game drive." },{ d: "Day 6", t: "Central Serengeti \u2014 Full day. Optional sunrise hot air balloon safari (subject to availability and weather) with bush champagne breakfast." },{ d: "Day 7", t: "Central Serengeti \u2014 Big cat tracking, kopjes exploration, river ecosystem." },{ d: "Day 8", t: "Departure \u2014 Morning game drive. Bush flight to Arusha." }], accommodation: "Premium tented camps and lodges with private dining options, intimate atmospheres, and prime in-park locations. Private vehicle from Day 2 onwards." },
+  { tier: "premium", image: "images/journey-07-mara-river.jpg", alt: "Wildebeest crossing the Mara River", title: "Across the Mara River", meta: "10 Days \u00b7 Migration Specialty \u00b7 Premium \u00b7 Jul\u2013Oct", pitch: "The migration's most dramatic chapter \u2014 the Mara River crossings. Premium camps positioned at the edge of the action.", description: "Designed for travelers who seek the migration's most dramatic moment. Premium camps positioned at the edge of the action, minimum driving time to crossing points, and the patience to wait for the moment.", days: [{ d: "Day 1", t: "Arusha boutique lodge." },{ d: "Day 2\u20133", t: "Tarangire (2 nights) \u2014 Game drives. Walking safari option Day 3." },{ d: "Day 4", t: "Karatu \u2014 Coffee estate private lunch." },{ d: "Day 5", t: "Ngorongoro Crater \u2014 Full-day. Rim overnight." },{ d: "Day 6", t: "Bush flight to Northern Serengeti / Kogatende \u2014 Premium tented camp positioned for Mara River access." },{ d: "Day 7\u20139", t: "Northern Serengeti (3 nights) \u2014 Three full days dedicated to migration tracking and river crossings. Crossings depend on herd movement and timing." },{ d: "Day 10", t: "Departure \u2014 Final morning game drive. Bush flight to Arusha." }], accommodation: "Premium tented camps in northern Serengeti, with seasonal mobile camps positioned within minutes of the Mara River crossing points." },
+  { tier: "premium", image: "images/journey-08-beyond-crater.jpg", alt: "Maasai community landscape Tanzania", title: "Beyond the Crater", meta: "9 Days \u00b7 Cultural & Wildlife \u00b7 Premium", pitch: "Tanzania is more than its wildlife. This journey weaves iconic game viewing with deeper cultural engagement.", description: "Combines classic game viewing with deeper cultural connection \u2014 Maasai community visits, Hadzabe hunter-gatherer encounters at Lake Eyasi, and walking safaris through the Ngorongoro Highlands.", days: [{ d: "Day 1", t: "Arusha." },{ d: "Day 2", t: "Tarangire + Maasai Visit \u2014 Morning game drive. Afternoon Maasai community visit (curated, non-staged)." },{ d: "Day 3", t: "Lake Eyasi \u2014 Travel to Lake Eyasi. Day 4 morning Hadzabe hunter-gatherer experience." },{ d: "Day 4", t: "Hadzabe morning + Ngorongoro Highlands \u2014 Morning Hadzabe. Afternoon transfer to Highlands eco-camp." },{ d: "Day 5", t: "Ngorongoro Highlands walking safari \u2014 Walking with Maasai guides. Picnic in volcanic landscapes." },{ d: "Day 6", t: "Ngorongoro Crater \u2014 Full-day drive. Rim overnight." },{ d: "Day 7\u20138", t: "Central Serengeti (2 nights) \u2014 Game drives." },{ d: "Day 9", t: "Departure." }], accommodation: "Premium lodges combined with cultural specialty properties (Lake Eyasi camps, Highlands eco-camps)." },
+  { tier: "premium", image: "images/journey-09-honeymoon.jpg", alt: "Zanzibar beach turquoise water", title: "Wild Hearts, Then Tides", meta: "11 Days \u00b7 Safari + Zanzibar \u00b7 Premium \u00b7 Honeymoon", pitch: "A signature combination for honeymooners \u2014 the pulse of the wild followed by the stillness of the Indian Ocean.", description: "Designed for couples seeking both adventure and seclusion.", days: [{ d: "Day 1", t: "Arusha \u2014 Boutique lodge with private suite. Welcome dinner." },{ d: "Day 2\u20133", t: "Tarangire (2 nights) \u2014 Game drives, sundowners, private bush dinner under stars Day 2." },{ d: "Day 4", t: "Ngorongoro Crater \u2014 Full-day drive. Rim overnight with sunset champagne." },{ d: "Day 5\u20136", t: "Central Serengeti (2 nights) \u2014 Game drives, optional sunrise hot air balloon safari (subject to availability and weather), candlelit private dinner." },{ d: "Day 7", t: "Bush flight to Zanzibar \u2014 Morning flight via Arusha. Afternoon arrival at private beach property (Kendwa, Nungwi, or Kizimkazi based on preference)." },{ d: "Day 8\u201310", t: "Zanzibar (3 nights) \u2014 Beach, dhow sailing at sunset, optional Stone Town visit, Mnemba Atoll snorkeling, couples spa." },{ d: "Day 11", t: "Departure from Zanzibar International (ZNZ)." }], accommodation: "Premium safari lodges paired with private beach properties on Zanzibar's premier coasts. Properties chosen for romance, seclusion, and signature couples experiences." },
+  { tier: "premium", image: "images/journey-10-family-premium.jpg", alt: "Family safari adventure scene", title: "The Family Premium", meta: "9 Days \u00b7 Northern Circuit \u00b7 Premium \u00b7 Family (8+)", pitch: "A premium family safari for families with older children and teens \u2014 premium private vehicles throughout, family suites at every stop.", description: "Designed for families with older children and teens. Premium private vehicles, family suites, walking safari options for older children, and pacing that turns a safari into family memory.", days: [{ d: "Day 1", t: "Arusha \u2014 Family welcome with junior tracker orientation. Boutique lodge family suite." },{ d: "Day 2\u20133", t: "Tarangire (2 nights) \u2014 Family-paced game drives, walking safari option for older children, junior tracker activities, family bush picnics." },{ d: "Day 4", t: "Karatu \u2014 Coffee farm interactive visit (season-permitting). Family lodge with pool." },{ d: "Day 5", t: "Ngorongoro Crater \u2014 Full-day with family lunch on rim." },{ d: "Day 6\u20138", t: "Central Serengeti (3 nights) \u2014 Premium tented camp with family suite. Game drives, balloon safari (height-permitting; subject to availability and weather), Maasai cultural visit, junior tracker certificates, optional bush sleep-out for older teens." },{ d: "Day 9", t: "Departure." }], accommodation: "Premium family-welcoming lodges with family suites and private vehicles throughout. Properties chosen for child enrichment programs and family dining flexibility." },
+  { tier: "ultra", image: "images/journey-11-bespoke-northern.jpg", alt: "Exclusive sunset over Serengeti plains", title: "Bespoke Northern", meta: "10 Days \u00b7 Northern Circuit \u00b7 Ultra-Luxury", pitch: "The Bakari Safari signature ultra-luxury Northern Circuit \u2014 exclusive-use properties, dedicated guide, gourmet dining in remote settings.", description: "Ultra-premium tented camps and select exclusive-use properties, private vehicle and dedicated guide throughout, gourmet dining in remote settings, and the unhurried pace that allows the wild to reveal itself fully.", days: [{ d: "Day 1", t: "Arusha \u2014 VIP meet-and-greet at JRO. Exclusive Arusha estate. Welcome dinner." },{ d: "Day 2\u20133", t: "Tarangire (2 nights, ultra-luxury tented camp) \u2014 Private game drives with dedicated guide. Walking safari, sundowners, private bush dinner under stars." },{ d: "Day 4", t: "Karatu \u2014 Coffee estate private experience. Spa morning. Leisure afternoon." },{ d: "Day 5", t: "Ngorongoro Crater \u2014 Full-day drive with private picnic. Sunset on rim." },{ d: "Day 6", t: "Bush flight to Central Serengeti \u2014 Charter or scheduled. Afternoon game drive." },{ d: "Day 7\u20138", t: "Central Serengeti (2 nights) \u2014 Private game drives, sunrise hot air balloon (subject to availability and weather) with private bush champagne breakfast, optional sleep-out under stars." },{ d: "Day 9", t: "Northern or Southern Serengeti (1 night, season-dependent) \u2014 Migration positioning. Mobile camp or exclusive-use property by season." },{ d: "Day 10", t: "Departure \u2014 Final morning game drive. Charter flight to Arusha." }], accommodation: "Ultra-luxury tented camps and select exclusive-use properties throughout. Private vehicle and dedicated guide from arrival to departure." },
+  { tier: "ultra", image: "images/journey-12-calving.jpg", alt: "Cheetah at sunrise on Serengeti plains", title: "Born of the Plains", meta: "9 Days \u00b7 Calving Season \u00b7 Ultra-Luxury \u00b7 Dec\u2013Mar", pitch: "The southern Serengeti's calving season \u2014 over 400,000 wildebeest calves born in weeks, with predator action at its peak and minimal crowds.", description: "One of nature's most extraordinary spectacles. Predator action peaks (cheetah, lion, hyena), crowds are minimal.", days: [{ d: "Day 1", t: "Arusha VIP arrival. Exclusive Arusha estate." },{ d: "Day 2", t: "Tarangire \u2014 Bush flight. Game drive. Ultra-luxury tented camp." },{ d: "Day 3", t: "Ngorongoro Crater \u2014 Full-day drive. Rim exclusive property." },{ d: "Day 4\u20137", t: "Ndutu / Southern Serengeti (4 nights, mobile camp) \u2014 Four full days in calving region. Cheetah hunts, lion ambushes, hyena clans. Walking safaris with Maasai guides. Private bush dinners in calving plains." },{ d: "Day 8", t: "Final Ndutu day \u2014 Final morning game drive. Afternoon transfer." },{ d: "Day 9", t: "Departure \u2014 Bush flight to Arusha." }], accommodation: "Ultra-luxury mobile tented camps positioned in Ndutu specifically for the calving season. Properties chosen for proximity to the action and exclusivity.", seasonNote: "This journey operates only during calving season (mid-December to mid-March), with peak action in February." },
+  { tier: "ultra", image: "images/journey-13-grand.jpg", alt: "Panoramic Serengeti landscape with horizon", title: "The Grand Tanzania", meta: "14 Days \u00b7 Northern Circuit + Zanzibar \u00b7 Ultra-Luxury", pitch: "Tanzania at its fullest. Two weeks combining iconic wildlife, coastal stillness, and the cultural through-line connecting both. The signature Bakari Safari journey.", description: "Designed for travelers with the time and inclination to know Tanzania deeply.", days: [{ d: "Day 1", t: "Arusha VIP arrival. Exclusive estate welcome dinner." },{ d: "Day 2\u20133", t: "Tarangire (2 nights) \u2014 Game drives, walking safari, Maasai community cultural visit." },{ d: "Day 4", t: "Lake Eyasi (Hadzabe morning) or Lake Manyara \u2014 By preference." },{ d: "Day 5", t: "Ngorongoro Crater \u2014 Full-day. Rim ultra-luxury overnight." },{ d: "Day 6\u20138", t: "Central Serengeti (3 nights) \u2014 Game drives, hot air balloon safari (subject to availability and weather), sleep-out option, gourmet bush experiences." },{ d: "Day 9\u201310", t: "Northern Serengeti or Ndutu (2 nights, season-dependent) \u2014 Migration positioning." },{ d: "Day 11", t: "Bush flight to Zanzibar \u2014 Morning. Afternoon arrival at private beach property." },{ d: "Day 12\u201313", t: "Zanzibar (2 nights) \u2014 Beach, dhow sailing, Stone Town private cultural tour, Mnemba Atoll snorkeling, couples spa." },{ d: "Day 14", t: "Departure \u2014 From Zanzibar International (ZNZ)." }], accommodation: "Ultra-luxury throughout \u2014 exclusive-use properties, signature tented camps, and premier private beach properties on Zanzibar. Private vehicle, dedicated guide, and curated detail at every stage." }
+];
+
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+function renderCards() {
+  const tiers = {
+    budget: document.getElementById('tier-budget-grid'),
+    comfort: document.getElementById('tier-comfort-grid'),
+    premium: document.getElementById('tier-premium-grid'),
+    ultra: document.getElementById('tier-ultra-grid')
+  };
+
+  journeys.forEach((j, i) => {
+    const card = document.createElement('div');
+    card.className = 'journey-card';
+    card.setAttribute('data-journey-index', i);
+    card.innerHTML = `
+      <div class="journey-card-img-wrap">
+        <div class="img-fallback-text">${j.alt}</div>
+        <img src="${j.image}" alt="${j.alt}" class="journey-card-img" loading="lazy"
+             onerror="this.style.display='none';">
+      </div>
+      <p class="journey-card-meta">${j.meta}</p>
+      <h4 class="journey-card-title">${j.title}</h4>
+      <p class="journey-card-pitch">${j.pitch}</p>
+      <span class="journey-card-link">View Itinerary \u2192</span>
+    `;
+    card.addEventListener('click', () => openModal(i));
+    tiers[j.tier].appendChild(card);
+  });
+}
+
+const modal = document.getElementById('journeyModal');
+const modalImage = document.getElementById('modalImage');
+const modalImageFallback = document.getElementById('modalImageFallback');
+const modalBody = document.getElementById('modalBody');
+const modalClose = document.getElementById('modalClose');
+
+function openModal(idx) {
+  const j = journeys[idx];
+  modalImage.style.display = 'block';
+  modalImageFallback.textContent = j.alt;
+  modalImage.src = j.image;
+  modalImage.alt = j.alt;
+
+  const subject = encodeURIComponent(`Inquiry: ${j.title}`);
+
+  let daysHtml = j.days.map(d => `
+    <div class="day-item">
+      <p class="day-label">${d.d}</p>
+      <p class="day-text">${d.t}</p>
+    </div>
+  `).join('');
+
+  let seasonNoteHtml = '';
+  if (j.seasonNote) {
+    seasonNoteHtml = `
+      <div style="background-color: var(--warm-tint); padding: 1.2rem 1.5rem; margin-top: 2rem; border-left: 3px solid var(--accent);">
+        <p class="italic" style="color: var(--text); font-size: 0.92rem;">${j.seasonNote}</p>
+      </div>
+    `;
+  }
+
+  modalBody.innerHTML = `
+    <p class="modal-meta">${j.meta}</p>
+    <h3 class="modal-title">${j.title}</h3>
+    <span class="thin-divider" style="margin-bottom: 1.8rem;"></span>
+    <p class="body-text" style="margin-bottom: 1rem;">${j.description}</p>
+    <h4 class="modal-section-title">Day-by-Day Itinerary</h4>
+    <div style="margin-top: 1.5rem;">${daysHtml}</div>
+    <h4 class="modal-section-title">Accommodation</h4>
+    <p class="body-text-muted">${j.accommodation}</p>
+    ${seasonNoteHtml}
+    <div style="margin-top: 2.8rem; padding-top: 2rem; border-top: 1px solid var(--divider); text-align: center;">
+      <a href="mailto:reservations@bakarisafari.com?subject=${subject}" class="btn-dark">Inquire About This Journey</a>
+    </div>
+  `;
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
+
+renderCards();
+</script>
+
+</body>
+</html>
